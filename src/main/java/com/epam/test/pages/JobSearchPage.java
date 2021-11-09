@@ -1,6 +1,7 @@
 package com.epam.test.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,7 +33,8 @@ public class JobSearchPage {
     }
 
     public void clickFind() {
-        btnFind.click();
+        JavascriptExecutor jsexec = (JavascriptExecutor) driver;
+        jsexec.executeScript("arguments[0].click();", btnFind);
     }
 
     public String getFindingHeading() {
